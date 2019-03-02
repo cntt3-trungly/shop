@@ -3,7 +3,7 @@ package vn.edu.leading.shop.models;
 import javax.persistence.*;
 import javax.validation.constraints.NotEmpty;
 
-@Table (name = "shop_order")
+@Table (name = "shop_orders")
 public class OrderModel {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

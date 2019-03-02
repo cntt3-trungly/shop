@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html xmlns:th=""http://www.thymleaf.org">
+<head th:replace="layout :: head"></head>
+
+<body>
+<nav th:replace=""layout :: header "></nav>
+<div class="container" id="main-content">
+    <div class="row"...>
+        <div class="row mt-4">
+            <div class="col-12 alert-success alert-dismissible fade show" role="alert" th:if=$"successMessage">
+                <span th:text="${successMessage}"></span>
+                    <button aria-label="Close" class="close" data-dismiss="alert" type="button"></button>
+
+            </div>
+
+        </div>
+    </div>
+</div>
+
+</body>
+</html>

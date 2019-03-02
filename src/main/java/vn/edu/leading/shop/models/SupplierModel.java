@@ -10,7 +10,7 @@ import javax.validation.constraints.NotEmpty;
 @Setter
 @Getter
 @ToString
-@Table(name = "shop_supplier")
+@Table(name = "shop_suppliers")
 
 public class SupplierModel {
     @Id
