@@ -1,10 +1,36 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:fragment="head">
+    <!-- Required mets tags -->
     <meta charset="UTF-8">
-    <title>Title</title>
+    <meta content="width=device-width, initial-scale=1, shrink-to-fit=no" name="viewport"/>
+
+    <title>Shop - Leading Edu</title>
+
+    <link href="../static/images/logo.png" rel="shortcut icon" th:href="@{/images/logo.png}"/>
+
+    <!-- Bootstrap css -->
+    <link href="http://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet"/>
+
+    <!-- Font Awesome -->
+    <link href="http://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"/>
+
+    <!-- Customer style -->
+
+    <link href="../static/css/style.css" rel="stylesheet" th:href="@{/css/style.css}"/>
+
 </head>
+
 <body>
+<nav class="navbar navbar-dark bg-dark" th:fragment="header">
+    <a class="navbar-brand" href="#">Shop</a>
+</nav>
+
+<h1 >Main content</h1>
+
+<footer class="container" th:fragment="footer">
+    <strong> @ 2019 Leading Edu</strong>
+</footer>
 
 </body>
 </html>

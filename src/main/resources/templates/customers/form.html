@@ -1,10 +1,54 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:replace="layout :: head"></head>
 
+<body>
+<nav th:replace="layout :: header"></nav>
+
+<div class="container" id="main-content">
+    <div class="rơ d-flex justify-content-center">
+        <form action="#" method="post" novalidate="novalidate" style="min-width: 300px;" th:action="@{/customer/save}" th:object="${customerModel}">
+            <h5 class="text-center">Customer form</h5>
+
+            <input th:field="*{id}" type="hidden"/>
+
+            <div class="form-group">
+                <input class="form-control" placeholder="Customer name" th:errorclass="field-error"
+                       th:field="*{customerName}" type="text"/>
+                <em th:errors="*{customerName}" th:if="${#fields.hasErrors('customerName')}"></em>
+            </div>
+
+            <div class="form-group">
+                <input class="form-control" placeholder="contact name" th:errorclass="field-error"
+                       th:onerrors="*{contactName}" th:if="${#fields.hasErrors('contactName')}"/>
+            </div>
+
+            <div class="form-group">
+                <input class="form-control" placeholder="Address" th:field="*{address}" type="text"/>
+            </div>
+
+            <div class="form-group">
+                <input class="form-control" placeholder="City" th:field="*{city}" type="text"/>
+            </div>
+
+            <div class="form-group">
+                <input class="form-control" placeholder="Postal Code" th:field="*{postalCode}" type="text"/>
+            </div>
+
+            <div class="form-group">
+                <input class="form-control" placeholder="Country" th:field="*{country}" type="text"/>
+            </div>
+
+            <div class="form-group">
+                <button class="btn btn-block btn-ptimary" type="submit">
+                    <i class="fa fa-save"></i> Save
+                </button>
+            </div>
+        </form>
+
+    </div>
+</div>
+
+<footer th:replace="layout::footer"></footer>
 </body>
 </html>
