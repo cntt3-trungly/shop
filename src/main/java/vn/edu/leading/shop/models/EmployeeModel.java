@@ -1,32 +1,35 @@
 package vn.edu.leading.shop.models;
 
 import lombok.*;
-import net.bytebuddy.dynamic.loading.InjectionClassLoader;
 
-import javax.persistence.*;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Table;
 import javax.validation.constraints.NotEmpty;
 
-@Entity
 @AllArgsConstructor
 @NoArgsConstructor
-@Setter
 @Getter
+@Setter
 @ToString
-
+@Entity
 @Table(name = "shop_employees")
-public class EmployeeModel {
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+public class EmployeeModel extends BaseModel<EmployeeModel> {
     @NotEmpty
-    @Column(name = "last_name",nullable = false)
+    @Column(name = "last_name", nullable = false)
     private String lastName;
+
     @NotEmpty
-    @Column(name = "first_name",nullable = false)
+    @Column(name = "first_name", nullable = false)
     private String firstName;
-    @Column(name = "birth_day",nullable = false)
-    private String birthDay;
-    private String notes;
+
+
+    @Column(name = "birth_date", nullable = false)
+    private String birthDate;
+
     private String photo;
 
+    private String notes;
+
 }
+

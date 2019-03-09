@@ -2,8 +2,11 @@ package vn.edu.leading.shop.models;
 
 import lombok.*;
 
-import javax.persistence.*;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Table;
 import javax.validation.constraints.NotEmpty;
+
 @Entity
 @AllArgsConstructor
 @NoArgsConstructor
@@ -12,13 +15,11 @@ import javax.validation.constraints.NotEmpty;
 @ToString
 @Table(name = "shop_shippers")
 
-public class ShipperModel {
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+public class ShipperModel extends BaseModel<ShipperModel> {
     @NotEmpty
-    @Column(name = "shipper_name",nullable = false)
+    @Column(name = "shipper_name", nullable = false)
     private String shipperName;
 
     private String phone;
+
 }
